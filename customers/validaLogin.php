@@ -21,20 +21,15 @@ $db = open_database();
     $recebeSenha = $_POST['password'];
     $filtraSenha = filter_var($recebeSenha, FILTER_SANITIZE_SPECIAL_CHARS);
     $filtraSenha = filter_var($filtraSenha, FILTER_SANITIZE_ADD_SLASHES);
-    function criptoSenha($criptoSenha)
-    {
-        return md5($criptoSenha);
-    }
-    $criptoSenha = criptoSenha($filtraSenha);
-    $consultaInformacoes = mysqli_query($db, "SELECT * FROM tblusuario WHERE email_tblusuario = '$filtraEmail' AND senha_tblusuario = '$criptoSenha'") or die(mysqli_error($db));
-    $verificaInformacoes = mysqli_num_rows($consultaInformacoes);
-    if ($verificaInformacoes == 1) {
-        while ($result = mysqli_fetch_array($consultaInformacoes)) {
-            $_SESSION['login'] = true;
-            $_SESSION['nome_usuario'] = $result['nome_tblusuario'];
-            header("Location: exclusivo.php");
-            exit();
-        }
+
+    $consultaInformacoes = mysqli_query($db, "SELECT * FROM tblusuario WHERE email_tblusuario = '$filtraEmail' LIMIT 1") or die(mysqli_error($db));
+
+    $verificaInformacoes = mysqli_fetch_array($consultaInformacoes);
+    if (password_verify($filtraSenha, $verificaInformacoes['senha_tblusuario'])) {
+        $_SESSION['login'] = true;
+        $_SESSION['nome_usuario'] = $verificaInformacoes['nome_tblusuario'];
+        header("Location: exclusivo.php");
+        exit();
     } else {
         $_SESSION['nao_login'] = true;
         header('Location: ../index.php');

@@ -14,7 +14,6 @@ $db = open_database();
 
 <?php if ($db) : ?>
 
-
           <?php
           $recebeNome = $_POST['nome'];
           $filtraNome = filter_var($recebeNome, FILTER_SANITIZE_SPECIAL_CHARS);
@@ -25,18 +24,15 @@ $db = open_database();
           $recebeSenha = $_POST['password'];
           $filtraSenha = filter_var($recebeSenha, FILTER_SANITIZE_SPECIAL_CHARS);
           $filtraSenha = filter_var($filtraSenha, FILTER_SANITIZE_ADD_SLASHES);
-          function criptoSenha($criptoSenha)
-          {
-               return md5($criptoSenha);
-          }
-          $criptoSenha = criptoSenha($filtraSenha);
+          
+          $criptoSenha = password_hash($filtraSenha, PASSWORD_DEFAULT);
+
           $consultaBanco = mysqli_query($db, "SELECT * FROM tblusuario WHERE email_tblusuario = '$recebeEmail'") or die(mysqli_error($db));
           $verificaBanco = mysqli_num_rows($consultaBanco);
           if ($verificaBanco == 1) {           
                $_SESSION['cadastrado'] = true ;             
                header('Location: cadastro.php');
-               exit();
-               return false;               
+               exit();                             
           } 
           else {
                $insereDados = mysqli_query($db, "INSERT INTO tblusuario (nome_tblusuario, email_tblusuario, senha_tblusuario) VALUES ('$filtraNome', '$filtraEmail', '$criptoSenha')") or die(mysqli_error($db));
