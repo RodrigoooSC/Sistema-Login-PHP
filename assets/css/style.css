@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Ultra&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300&display=swap');
+
+* {
+  padding:0;
+  margin:0;
+  vertical-align:baseline;
+  list-style:none;
+  border:0
+}
+body {
+    background-color: #CDCDB4;  
+  } 
+/* -------------------------------------------- TELA DE LOGIN -------------------------------------------- */
+  .login{
+    background-image: linear-gradient(to bottom left, #E5E3C9, #B4CFB0,#94B49F ,#789395);
+    border-radius: 15px;
+    padding: 15px;   
+  }
+  .title-login{
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Ultra', serif;    
+  }
+  .usuario-invalido{  
+    text-align: center;  
+    font-weight: 400;
+    color: #fff;
+    background-color: #EE6A50;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 1px;  
+  }
+  /* -------------------------------------------- TELA DE CADASTRO -------------------------------------------- */
+
+  .cadastro{
+    background-image: linear-gradient(to bottom left, #E5E3C9, #B4CFB0,#94B49F ,#789395);
+    border-radius: 15px;
+    padding: 10px;       
+  }
+  .title-cadastro{
+    font-family: 'Ultra', serif;
+    font-size: 25px;
+    text-align: center;
+  }
+  .usuario-cadastrado{
+  text-align: center;  
+  font-weight: 400;
+  color: #fff;
+  background-color: #4EEE94;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 1px; 
+  }
+  .usuario-cadastro{
+  text-align: center;  
+  font-weight: 400;
+  color: #fff;
+  background-color: #EE6A50;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 1px;
+  }
+  /* -------------------------------------------- TELA CONTEÚDO -------------------------------------------- */
+
+  .conteudo{
+    margin: 20px;
+    padding: 20px;
+    margin-bottom: 5px;
+    background-color: #94B49F;
+    border-radius: 20px;
+  }
+  .conteudo-1{
+    background-color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    border: #000 solid 2px;
+
+  }
+  .acesso-entrada{
+    font-family: 'Fredoka', sans-serif;
+    font-size: 20px;   
+  }
+  /* -------------------------------------------- TELA ESQUECEU SENHA -------------------------------------------- */
+
+  .senha{
+    background-image: linear-gradient(to bottom left, #E5E3C9, #B4CFB0,#94B49F ,#789395);
+    border-radius: 15px;
+    padding: 10px;       
+  }
+  .title-senha{
+    font-family: 'Ultra', serif;
+    font-size: 25px;
+    text-align: center;
+  }
+  .enviado{
+    text-align: center;  
+  font-weight: 400;
+  color: #fff;
+  background-color: #4EEE94;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 1px; 
+  }
+  .nao-enviado{
+    text-align: center;  
+  font-weight: 400;
+  color: #fff;
+  background-color: #EE6A50;
+  border-radius: 8px;
+  margin: 10px;
+  padding: 1px;
+  }
+ 
