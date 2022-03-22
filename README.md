@@ -60,7 +60,7 @@ define('DB_PASSWORD', 'sua senha aqui');
 
 define('DB_HOST', 'localhost');
 ```
-- Abra um terminal na pasta raiz do projeto e execute o projeto:
+- Abra um terminal na pasta raiz do projeto e execute a aplicação:
 ```
 php -S localhost:8080
 ```
