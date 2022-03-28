@@ -50,7 +50,7 @@ UNIQUE (email_tblusuario),
 PRIMARY KEY (id_tblusuario)
 );
 ```
-- Caso seja necessário modifique o arquvio 'config.php' com as credencias do seu bd:
+- Caso seja necessário modifique o arquivo 'config.php' com as credencias do seu bd:
 ```
 define('DB_NAME', 'empresax');
 
