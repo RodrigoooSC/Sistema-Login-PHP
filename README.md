@@ -36,7 +36,7 @@ O projeto original foi desenvolvido utilizando HTML/CSS básico, onde tomei a li
  git clone https://github.com/RodrigoooSC/Sistema-Login-PHP.git
 ```
 - Crie o banco de dados, a tabela e os campos:
-```
+```sql
 CREATE DATABASE empresax;
 
 USE empresax;
@@ -51,7 +51,7 @@ PRIMARY KEY (id_tblusuario)
 );
 ```
 - Caso seja necessário modifique o arquivo 'config.php' com as credencias do seu bd:
-```
+```php
 define('DB_NAME', 'empresax');
 
 define('DB_USER', 'root');
@@ -61,7 +61,7 @@ define('DB_PASSWORD', 'sua senha aqui');
 define('DB_HOST', 'localhost');
 ```
 - Abra um terminal na pasta raiz do projeto e execute a aplicação:
-```
+```bash
 php -S localhost:8080
 ```
 
